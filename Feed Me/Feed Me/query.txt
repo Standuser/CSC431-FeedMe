@@ -1,0 +1,45 @@
+SELECT restaurantId, restaurantName, menuId FROM Restaurants WHERE veganOptions=veganInput AND price IN (priceInputArray) AND distance IN (distanceInputArray);
+
+SELECT street, city, state, zipCode FROM Address WHERE restaurantId=’randomIdInput’;
+
+SELECT uberEatsAvailability, postmatesAvailability, website WHERE restaurantId=’radomIdInput’;
+
+SELECT mealId, mealName, priceDollars FROM Menu WHERE vegan=’veganInput’ AND menuId=’randomInputMenuId’;
+
+SELECT ingredients FROM Ingredients WHERE menuId=’randomInputMenuId’ AND mealId= ‘randomMealIdSelected’;
+
+
+
+
+
+SELECT restaurantId FROM Restaurants WHERE veganOptions='veganInput' AND price IN ('priceInputArray') AND distance IN (‘distanceInputArray’);
+
+SELECT restaurantName FROM Resturants WHERE restaurantId='randomIdInput';
+
+SELECT street, city, state, zipCode FROM Address WHERE restaurantId=’randomIdInput’;
+
+SELECT a.resaurantName, b.street, b.city, b.state, b.zipCode FROM Restaurants a INNER JOIN Address b ON a.resaurantId=b.restaurantId WHERE a.resaurantId='randomIdInput';
+
+SELECT menuId FROM Restaurants WHERE restaurantId='randomIdInput';
+
+SELECT mealId FROM Menus WHERE vegan='veganInput' AND menuId=(SELECT menuId FROM Restaurants WHERE restaurantId='randomIdInput');
+
+SELECT mealName, priceDollars FROM Menus WHERE mealId='randomMealIdSelected';
+
+SELECT ingredients FROM Ingredients WHERE menuId=(SELECT menuId FROM Restaurants WHERE restaurantId='randomIdInput') AND mealId='randomMealIdSelected';
+
+
+
+
+
+SELECT a.resauratnId, a.resaurantName, a.menuId, b.street, b.city, b.state, b.zipCode FROM Restaurants a INNER JOIN Address b ON a.resaurantId=b.restaurantId WHERE a.veganOptions='veganInput' AND a.price IN ('priceInputArray') AND a.distance IN (‘distanceInputArray’);
+
+SELECT a.mealId, a.mealName, a.priceDollars, b. FROM Menus WHERE vegan='veganInput' AND menuId=(SELECT menuId FROM Restaurants WHERE restaurantId='randomIdInput');
+
+
+
+
+
+
+
+
